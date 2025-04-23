@@ -1,6 +1,9 @@
 class Solution {
     public void setZeroes(int[][] matrix) {
 
+        // Time Complexity - O(n * m)
+        // Space Complexity - O(n + m) 
+
         int n = matrix.length;
         int m = matrix[0].length;
 
