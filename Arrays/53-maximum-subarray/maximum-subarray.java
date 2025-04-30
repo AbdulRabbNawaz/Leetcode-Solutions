@@ -1,6 +1,7 @@
 class Solution {
     public int maxSubArray(int[] nums) {
 
+        // Optimal Solution
         int max = Integer.MIN_VALUE;
         int sum = 0;
 
