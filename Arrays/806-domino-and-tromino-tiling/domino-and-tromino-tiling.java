@@ -4,17 +4,16 @@ class Solution {
         if (n == 0) return 1;
         if (n == 1) return 1;
         if (n == 2) return 2;
+        if (n == 3) return 5;
 
         long[] dp = new long[n + 1];
         dp[0] = 1;
         dp[1] = 1;
         dp[2] = 2;
+        dp[3] = 5;
 
-        long sum = 1; // sum = dp[0] + dp[1], used for the tromino contribution
-
-        for (int i = 3; i <= n; i++) {
-            dp[i] = (dp[i - 1] + dp[i - 2] + 2 * sum) % MOD;
-            sum = (sum + dp[i - 2]) % MOD;
+        for (int i = 4; i <= n; i++) {
+            dp[i] = (2 * dp[i - 1] + dp[i - 3]) % MOD;
         }
 
         return (int) dp[n];
